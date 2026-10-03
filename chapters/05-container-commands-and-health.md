@@ -64,7 +64,7 @@ A Dockerfile can define a health check that periodically tests whether the appli
 ~~~dockerfile
 FROM nginx:alpine
 
-HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \\
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
     CMD wget --quiet --tries=1 --spider http://127.0.0.1/ || exit 1
 ~~~
 
