@@ -52,7 +52,7 @@ The focus is on core Docker knowledge that applies to everyday development and d
    Use logs, inspect, events, exec, Compose status, and repeatable checks to find failures.
 
 14. [Containerizing an application](./chapters/14-containerizing-an-application.md)  
-   Package a small application with a health endpoint, a persistent data service, and repeatable configuration.
+   Build and run a small Node.js HTTP service, publish a local port, check responses, and clean up the container.
 
 15. [Local development and test workflows](./chapters/15-local-development-and-test-workflows.md)  
    Use Compose for local dependencies, tests, profiles, rebuilds, and cleanup.
