@@ -54,9 +54,9 @@ A bind mount connects an existing host path to a path inside the container. It i
 First create a small site directory and a file. In PowerShell:
 
 ~~~powershell
-New-Item -ItemType Directory -Force .\\site | Out-Null
-Set-Content -Path .\\site\\index.html -Value '<h1>Mounted from the host</h1>'
-$sitePath = (Resolve-Path .\\site).Path
+New-Item -ItemType Directory -Force .\site | Out-Null
+Set-Content -Path .\site\index.html -Value '<h1>Mounted from the host</h1>'
+$sitePath = (Resolve-Path .\site).Path
 ~~~
 
 Run Nginx with that directory mounted read-only:
