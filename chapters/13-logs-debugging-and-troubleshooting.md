@@ -114,7 +114,7 @@ sudo systemctl status docker
 sudo journalctl -u docker.service --since "10 minutes ago"
 ~~~
 
-On Docker Desktop for Windows with the WSL 2 backend, daemon logs are available under `%LOCALAPPDATA%\\Docker\\log\\vm\\init.log`. Docker Desktop also provides its own troubleshooting view. The exact log location depends on the platform and backend.
+On Docker Desktop for Windows with the WSL 2 backend, daemon logs are available under `%LOCALAPPDATA%\Docker\log\vm\init.log`. Docker Desktop also provides its own troubleshooting view. The exact log location depends on the platform and backend.
 
 ## Understand logging driver limits
 
