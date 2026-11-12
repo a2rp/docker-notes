@@ -17,7 +17,7 @@ Use a mount when data needs a different lifetime or location:
 | Container writable layer | Managed with the container | Temporary files that can disappear with the container. |
 | Named volume | Managed by Docker on the Engine host | Database files and data that should outlive a container. |
 | Bind mount | A specific host file or directory | Source code, configuration, or files shared with the host. |
-| `tmpfs` mount | Host memory | Temporary Linux container data that should not be written to disk. |
+| `tmpfs` mount | Host memory | Temporary Linux container data; the host may still write it to swap. |
 
 Volumes and bind mounts are separate from the container's writable layer. Removing a container does not normally remove a named volume.
 
@@ -79,7 +79,7 @@ This is a common reason an application seems to lose its installed dependencies 
 
 ## Use temporary memory-backed storage
 
-A `tmpfs` mount is temporary storage for Linux containers. The data does not persist after the container stops and is not stored in a Docker volume.
+A `tmpfs` mount is temporary storage for Linux containers. The data does not persist after the container stops and is not stored in a Docker volume. On Linux, the host may write tmpfs pages to swap, so tmpfs alone does not guarantee that sensitive data never reaches disk.
 
 ~~~sh
 docker run --rm --mount type=tmpfs,target=/run/cache alpine:3 sh -c 'echo temporary > /run/cache/value.txt && cat /run/cache/value.txt'
